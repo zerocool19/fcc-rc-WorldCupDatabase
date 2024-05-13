@@ -26,16 +26,16 @@ echo -e "\nNumber of games where the winning team scored more than two goals:"
 echo "$($PSQL "SELECT name FROM teams FULL JOIN games ON teams.team_id = games.winner_id WHERE winner_goals > 2")"
 
 echo -e "\nWinner of the 2018 tournament team name:"
-echo "$($PSQL "")"
+echo "$($PSQL "SELECT name FROM teams FULL JOIN games ON teams.team_id = games.winner_id WHERE year = 2018 AND round = 'Final'")"
 
 echo -e "\nList of teams who played in the 2014 'Eighth-Final' round:"
-echo "$($PSQL "")"
+echo "$($PSQL "SELECT name FROM teams FULL JOIN games ON teams.team_id = games.winner_id WHERE year = 2014 AND round = 'Eighth-Final'")"
 
 echo -e "\nList of unique winning team names in the whole data set:"
 echo "$($PSQL "")"
 
 echo -e "\nYear and team name of all the champions:"
-echo "$($PSQL "")"
+echo "$($PSQL "SELECT name FROM teams FULL JOIN games ON teams.team_id = games.winner_id WHERE round = 'Final'")"
 
 echo -e "\nList of teams that start with 'Co':"
-echo "$($PSQL "")"
+echo "$($PSQL "SELECT name FROM teams FULL JOIN games ON teams.team_id = games.winner_id WHERE name LIKE 'Co%'")"
