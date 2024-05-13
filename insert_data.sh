@@ -44,3 +44,5 @@ do
     
   fi
 done
+
+echo -e "\nTeams and games are correctly added in the 'worldcup' database.\n"
